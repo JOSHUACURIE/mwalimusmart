@@ -64,9 +64,7 @@ exports.createStudent = async (req, res) => {
   }
 };
 
-// @desc    Get all students for a teacher
-// @route   GET /api/students
-// @access  Private
+
 exports.getAllStudents = async (req, res) => {
   try {
     const {
@@ -131,9 +129,7 @@ exports.getAllStudents = async (req, res) => {
   }
 };
 
-// @desc    Get single student by ID
-// @route   GET /api/students/:id
-// @access  Private
+
 exports.getStudentById = async (req, res) => {
   try {
     const student = await Student.findOne({
@@ -176,9 +172,6 @@ exports.getStudentById = async (req, res) => {
   }
 };
 
-// @desc    Update student
-// @route   PUT /api/students/:id
-// @access  Private
 exports.updateStudent = async (req, res) => {
   try {
     const { streamId, ...updateData } = req.body;
@@ -253,9 +246,7 @@ exports.updateStudent = async (req, res) => {
   }
 };
 
-// @desc    Delete student (soft delete by changing status)
-// @route   DELETE /api/students/:id
-// @access  Private
+
 exports.deleteStudent = async (req, res) => {
   try {
     const student = await Student.findOne({
@@ -293,9 +284,7 @@ exports.deleteStudent = async (req, res) => {
   }
 };
 
-// @desc    Permanently delete student (admin only)
-// @route   DELETE /api/students/:id/permanent
-// @access  Private (Admin only)
+
 exports.permanentDeleteStudent = async (req, res) => {
   try {
     // Check if user is admin
@@ -345,9 +334,7 @@ exports.permanentDeleteStudent = async (req, res) => {
   }
 };
 
-// @desc    Get student profile with all details
-// @route   GET /api/students/:id/profile
-// @access  Private
+
 exports.getStudentProfile = async (req, res) => {
   try {
     const student = await Student.findOne({
@@ -386,9 +373,7 @@ exports.getStudentProfile = async (req, res) => {
   }
 };
 
-// @desc    Get student performance
-// @route   GET /api/students/:id/performance
-// @access  Private
+
 exports.getStudentPerformance = async (req, res) => {
   try {
     const { term } = req.query;
@@ -422,9 +407,7 @@ exports.getStudentPerformance = async (req, res) => {
   }
 };
 
-// @desc    Bulk create students
-// @route   POST /api/students/bulk
-// @access  Private
+
 exports.bulkCreateStudents = async (req, res) => {
   try {
     const { students, streamId } = req.body;
@@ -506,9 +489,7 @@ exports.bulkCreateStudents = async (req, res) => {
   }
 };
 
-// @desc    Bulk update students (e.g., promote to next class)
-// @route   PUT /api/students/bulk/update
-// @access  Private
+
 exports.bulkUpdateStudents = async (req, res) => {
   try {
     const { studentIds, updates } = req.body;
@@ -567,9 +548,6 @@ exports.bulkUpdateStudents = async (req, res) => {
   }
 };
 
-// @desc    Promote students to next class/stream
-// @route   POST /api/students/promote
-// @access  Private
 exports.promoteStudents = async (req, res) => {
   try {
     const { studentIds, newStreamId, newAcademicYear } = req.body;
@@ -648,9 +626,6 @@ exports.promoteStudents = async (req, res) => {
   }
 };
 
-// @desc    Transfer students to another school
-// @route   POST /api/students/transfer
-// @access  Private
 exports.transferStudents = async (req, res) => {
   try {
     const { studentIds, transferReason, newSchool } = req.body;
