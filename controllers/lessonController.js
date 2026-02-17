@@ -4,9 +4,7 @@ const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const path = require('path');
 
-// @desc    Create a new lesson plan
-// @route   POST /api/lessons
-// @access  Private
+
 exports.createLessonPlan = async (req, res) => {
   try {
     const lessonData = {

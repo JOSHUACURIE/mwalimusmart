@@ -1,4 +1,4 @@
-// models/LessonPlan.js
+const mongoose = require('mongoose');
 const LessonPlanSchema = new mongoose.Schema({
   // Core Information
   title: { 

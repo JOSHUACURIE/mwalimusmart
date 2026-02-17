@@ -2,7 +2,7 @@
 const Stream = require('../models/Stream');
 const Class = require('../models/Class');
 const Student = require('../models/Student');
-const LessonPlan = require('../models/LessonPlan');
+const LessonPlan = require('../models/Lesson');
 const Score = require('../models/Score');
 const mongoose = require('mongoose');
 
