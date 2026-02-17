@@ -12,6 +12,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "pdfkit": "^0.17.2"
   }
 }
